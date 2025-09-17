@@ -1,0 +1,19 @@
+pipeline {
+    agent {
+    label 'dev'
+    }
+    stages {
+        stage ('aws_configure') {
+            steps {
+                sh 'java -version'
+                sh 'mvn -version'
+            }
+        stage ('gitcheckout') {
+            steps {
+                echo "cloning git repository"
+                scm checkout
+            }
+        }
+        }
+    }
+}
