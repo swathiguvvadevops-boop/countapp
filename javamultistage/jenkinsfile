@@ -3,15 +3,15 @@ pipeline {
     label 'dev'
     }
     stages {
-        stage ('aws_configure') {
+        stage('aws_configure') {
             steps {
                 sh 'java -version'
                 sh 'mvn -version'
             }
-        stage ('gitcheckout') {
+        stage('gitcheckout') {
             steps {
                 echo "cloning git repository"
-                scm checkout
+                checkout scm
             }
         }
         }
