@@ -27,7 +27,7 @@ pipeline {
         stage('Running application') {
             steps {
                 echo " Running java application"
-                sh 'java -jar ${env.workspace}/mavenpipeline/javamultistage/target/demo-0.0.1-SNAPSHOPT.jar'
+                sh 'java -jar target/demo-0.0.1-SNAPSHOPT.jar'
             }
             }
         }
