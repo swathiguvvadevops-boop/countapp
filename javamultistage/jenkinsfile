@@ -28,7 +28,8 @@ pipeline {
             steps {
                 echo " Running java application"
                 dir('javamultistage') {
-                sh 'java -jar target/demo-0.0.1-SNAPSHOPT.jar'
+                    sh 'ls -l target/*'
+                    sh 'java -jar target/demo-0.0.1-SNAPSHOT.jar'
             }
             }
         }
