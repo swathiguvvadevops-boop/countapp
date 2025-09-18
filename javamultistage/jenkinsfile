@@ -27,7 +27,7 @@ pipeline {
         stage('Running application') {
             steps {
                 echo " Running java application"
-                dir('javamultistage/target') {
+                dir('javamultistage') {
                 sh 'java -jar target/demo-0.0.1-SNAPSHOPT.jar'
             }
             }
