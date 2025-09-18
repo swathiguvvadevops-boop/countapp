@@ -16,5 +16,17 @@ pipeline {
             }
         
         }
+        stage('app_build') {
+            steps {
+                echo "clean build application"
+                sh 'mvn clean package -Dskiptests'
+            }
+        }
+        stage('Running application') {
+            steps {
+                echo " Running java application"
+                sh 'java -jar ${env.workspace}/mavenpipeline/javamultistage/target/demo-0.0.1-SNAPSHOPT.jar'
+            }
+            }
+        }
     }
-}
