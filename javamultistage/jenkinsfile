@@ -19,8 +19,10 @@ pipeline {
         stage('app_build') {
             steps {
                 echo "clean build application"
-                sh 'mvn clean package -DskipTests'
-            }
+                 dir('javamultistage') {
+                   sh 'mvn clean package -DskipTests'
+        }            
+        }
         }
         stage('Running application') {
             steps {
